@@ -1,0 +1,756 @@
+
+/* =========================================
+   REPORTS & ANALYTICS - PREMIUM ADMIN DESIGN
+========================================= */
+
+.reports-page {
+    min-height: 100vh;
+    padding: 30px 4%;
+    background: #fff8f0;
+    color: #39251b;
+    font-family: inherit;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.reports-page * {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   HERO BANNER
+========================================= */
+
+.reports-hero {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28px;
+    background: linear-gradient(
+        110deg,
+        #ad3d08 0%,
+        #e85a09 52%,
+        #ff913a 100%
+    );
+    margin-bottom: 45px;
+    box-shadow: 0 15px 35px rgba(175, 76, 22, 0.13);
+}
+
+.reports-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 62%;
+    padding: 42px 5%;
+}
+
+.reports-hero-label {
+    display: inline-block;
+    padding: 9px 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.14);
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.reports-hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1.15;
+    color: #ffffff;
+    margin: 0 0 15px;
+    font-weight: 700;
+}
+
+.reports-hero p {
+    color: #fff0df;
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 0;
+}
+
+.reports-hero-line {
+    width: 65px;
+    height: 5px;
+    border-radius: 10px;
+    background: #ffffff;
+    margin-top: 25px;
+}
+
+.reports-hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(232, 90, 9, 0.35),
+            rgba(232, 90, 9, 0.05)
+        ),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=85");
+    background-size: cover;
+    background-position: center;
+    clip-path: ellipse(90% 100% at 100% 50%);
+    opacity: 0.95;
+}
+
+/* =========================================
+   SECTION HEADING
+========================================= */
+
+.reports-section-heading {
+    margin-bottom: 25px;
+}
+
+.reports-eyebrow {
+    display: block;
+    color: #e96c2c;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.reports-section-heading h2,
+.report-section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: #472819;
+    margin: 0 0 9px;
+}
+
+.reports-section-heading p,
+.report-section-heading p {
+    color: #927e6e;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================================
+   SUMMARY STATISTICS
+========================================= */
+
+.report-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.report-card {
+    position: relative;
+    min-height: 170px;
+    padding: 22px 23px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #f1dfd0;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(77, 43, 20, 0.055);
+    transition: all 0.3s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-6px);
+    border-color: #efb78e;
+    box-shadow: 0 12px 28px rgba(153, 75, 32, 0.11);
+}
+
+.report-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.report-card-number {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #bd9c85;
+}
+
+.report-card-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ed7738;
+    box-shadow: 0 0 0 5px #fff0e4;
+}
+
+.report-card-content h3 {
+    color: #806c5e;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 9px;
+}
+
+.report-card-content h2 {
+    font-family: Georgia, serif;
+    color: #bd460c;
+    font-size: 35px;
+    font-weight: 700;
+    margin: 0 0 7px;
+}
+
+.report-card-content p {
+    font-size: 12px;
+    color: #a18b7b;
+    margin: 0;
+}
+
+.report-card-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, #d64c0b, #ffab65);
+}
+
+.report-card-active .report-card-dot {
+    background: #219568;
+    box-shadow: 0 0 0 5px #e9f6ee;
+}
+
+.report-card-inactive .report-card-dot {
+    background: #dba33e;
+    box-shadow: 0 0 0 5px #fff6df;
+}
+
+.report-card-recipes .report-card-dot {
+    background: #e87836;
+}
+
+.report-card-reviews .report-card-dot {
+    background: #9875bd;
+    box-shadow: 0 0 0 5px #f3edfa;
+}
+
+.report-card-rating .report-card-dot {
+    background: #d9a32f;
+    box-shadow: 0 0 0 5px #fff6df;
+}
+
+.report-card-featured .report-card-dot {
+    background: #d76b8c;
+    box-shadow: 0 0 0 5px #fff0f4;
+}
+
+/* =========================================
+   COMMON REPORT SECTIONS
+========================================= */
+
+.report-section {
+    padding: 30px;
+    margin-bottom: 30px;
+    background: #ffffff;
+    border: 1px solid #f0dfd1;
+    border-radius: 21px;
+    box-shadow: 0 7px 24px rgba(74, 45, 24, 0.055);
+}
+
+.report-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.report-section-heading h2 {
+    font-size: 25px;
+}
+
+.report-total-badge {
+    min-width: 135px;
+    padding: 13px 20px;
+    background: #fff4e9;
+    border: 1px solid #f4ddc9;
+    border-radius: 13px;
+    text-align: center;
+}
+
+.report-total-badge strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 27px;
+    color: #d95412;
+    margin-bottom: 4px;
+}
+
+.report-total-badge span {
+    color: #927e6e;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* =========================================
+   MODERATION STATISTICS
+========================================= */
+
+.status-report {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.status-report-item {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.status-report-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.status-report-heading > div {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.status-report-heading > div span {
+    font-size: 14px;
+    font-weight: 650;
+    color: #594333;
+}
+
+.status-report-heading strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: #fff0e3;
+    color: #cf5a1b;
+    border-radius: 9px;
+    font-size: 13px;
+}
+
+.status-percentage {
+    color: #9a8372;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.report-progress {
+    width: 100%;
+    height: 12px;
+    background: #f3eee9;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.report-progress-fill {
+    height: 100%;
+    border-radius: 30px;
+    transition: width 0.6s ease;
+}
+
+.approved-fill {
+    background: linear-gradient(90deg, #13875b, #50b68b);
+}
+
+.pending-fill {
+    background: linear-gradient(90deg, #e8a000, #ffc74e);
+}
+
+.rejected-fill {
+    background: linear-gradient(90deg, #d9364c, #f47779);
+}
+
+/* =========================================
+   CATEGORY ANALYTICS
+========================================= */
+
+.category-report {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.category-report-item {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.category-report-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.category-name-group {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.category-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: #fff1e5;
+    color: #d55d22;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.category-name-group > span:last-child {
+    color: #594333;
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.category-report-heading > strong {
+    font-size: 13px;
+    color: #563c2c;
+}
+
+.category-report-heading > strong span {
+    color: #a18b7b;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.category-fill {
+    background: linear-gradient(90deg, #c94b0a, #ff994f);
+}
+
+/* =========================================
+   RECENT ACTIVITY
+========================================= */
+
+.activity-section {
+    margin-bottom: 40px;
+}
+
+.activity-header select {
+    padding: 12px 17px;
+    min-width: 185px;
+    border: 1px solid #eed9c8;
+    border-radius: 11px;
+    background: #fff9f3;
+    color: #694b38;
+    font-size: 13px;
+    font-family: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+.activity-header select:focus {
+    border-color: #e96c2c;
+    box-shadow: 0 0 0 3px rgba(233, 108, 44, 0.1);
+}
+
+/* =========================================
+   CUSTOM DATE FILTER
+========================================= */
+
+.custom-date-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background: #fff8f1;
+    border: 1px solid #f2dfd0;
+    border-radius: 14px;
+}
+
+.custom-date-filter label {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    color: #694b38;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.custom-date-filter input {
+    padding: 12px 14px;
+    min-width: 190px;
+    border: 1px solid #ead9cb;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #39251b;
+    font-family: inherit;
+    outline: none;
+}
+
+.custom-date-filter input:focus {
+    border-color: #e96c2c;
+    box-shadow: 0 0 0 3px rgba(233, 108, 44, 0.1);
+}
+
+/* =========================================
+   ACTIVITY TABLE
+========================================= */
+
+.activity-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #f0e4da;
+    border-radius: 14px;
+}
+
+.activity-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+}
+
+.activity-table thead {
+    background: #fff2e7;
+}
+
+.activity-table th {
+    padding: 17px 18px;
+    text-align: left;
+    color: #a64b1d;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+}
+
+.activity-table td {
+    padding: 19px 18px;
+    border-bottom: 1px solid #f2ebe4;
+    color: #806d5f;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.activity-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.activity-table tbody tr:hover {
+    background: #fff9f3;
+}
+
+.activity-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.activity-name {
+    color: #493324 !important;
+    font-weight: 700;
+}
+
+/* =========================================
+   STATUS LABELS
+========================================= */
+
+.admin-status {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 750;
+}
+
+.admin-status.pending {
+    background: #fff3d9;
+    color: #a16b0d;
+}
+
+.admin-status.approved {
+    background: #e6f5ec;
+    color: #218151;
+}
+
+.admin-status.rejected {
+    background: #fde9e9;
+    color: #c63d48;
+}
+
+.admin-status.completed {
+    background: #fff0e4;
+    color: #c65a25;
+}
+
+/* =========================================
+   ACTIVITY FOOTER
+========================================= */
+
+.activity-footer {
+    padding-top: 17px;
+    text-align: right;
+    color: #a18b7b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.admin-empty {
+    padding: 18px;
+    margin: 15px 0;
+    text-align: center;
+    background: #fff3e9;
+    color: #bd5b28;
+    border-radius: 12px;
+    font-size: 13px;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .report-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .reports-hero-content {
+        width: 70%;
+    }
+
+    .reports-hero-image {
+        width: 38%;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .reports-page {
+        padding: 22px 15px;
+    }
+
+    .reports-hero {
+        min-height: 300px;
+        border-radius: 19px;
+    }
+
+    .reports-hero-content {
+        width: 100%;
+        padding: 30px 24px;
+    }
+
+    .reports-hero h1 {
+        font-size: 32px;
+    }
+
+    .reports-hero p {
+        font-size: 13px;
+        max-width: 90%;
+    }
+
+    .reports-hero-image {
+        width: 100%;
+        opacity: 0.16;
+        clip-path: none;
+    }
+
+    .reports-section-heading h2 {
+        font-size: 23px;
+    }
+
+    .report-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .report-card {
+        min-height: 150px;
+        padding: 17px;
+        border-radius: 14px;
+    }
+
+    .report-card-content h2 {
+        font-size: 29px;
+    }
+
+    .report-card-content h3 {
+        font-size: 12px;
+    }
+
+    .report-section {
+        padding: 21px 17px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+    }
+
+    .report-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 17px;
+    }
+
+    .report-section-heading h2 {
+        font-size: 22px;
+    }
+
+    .report-total-badge {
+        width: 100%;
+        text-align: left;
+    }
+
+    .report-total-badge strong {
+        font-size: 24px;
+    }
+
+    .activity-header select {
+        width: 100%;
+    }
+
+    .custom-date-filter {
+        flex-direction: column;
+    }
+
+    .custom-date-filter label,
+    .custom-date-filter input {
+        width: 100%;
+    }
+
+    .status-report-heading > div span {
+        font-size: 12px;
+    }
+
+    .category-report-heading > strong {
+        font-size: 11px;
+    }
+
+    .category-name-group > span:last-child {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .report-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .reports-hero h1 {
+        font-size: 27px;
+    }
+
+}

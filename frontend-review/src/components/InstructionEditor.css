@@ -1,0 +1,159 @@
+
+/* Instruction Editor */
+
+.instruction-editor {
+    width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+    background: #fffaf4;
+    border: 1px solid #eee4da;
+    border-radius: 18px;
+}
+
+/* Heading */
+
+.instruction-editor h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #302a24;
+    margin: 0 0 22px;
+}
+
+/* Instruction row */
+
+.instruction-row {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #eee5dc;
+    border-radius: 14px;
+    transition: all 0.25s ease;
+}
+
+.instruction-row:hover {
+    border-color: #efc2a9;
+    box-shadow: 0 6px 17px rgba(60, 42, 27, 0.05);
+}
+
+/* Step label */
+
+.instruction-row label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: #fff0e7;
+    color: #d96835;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Textarea */
+
+.instruction-row textarea {
+    width: 100%;
+    min-height: 95px;
+    padding: 14px;
+    border: 1px solid #e8ddd2;
+    border-radius: 10px;
+    background: #fffaf6;
+    color: #302a24;
+    font-family: inherit;
+    font-size: 13px;
+    line-height: 1.8;
+    resize: vertical;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.instruction-row textarea::placeholder {
+    color: #a49a90;
+}
+
+.instruction-row textarea:focus {
+    border-color: #e47743;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(228, 119, 67, 0.12);
+}
+
+/* Delete button */
+
+.remove-instruction-btn {
+    align-self: flex-end;
+    padding: 10px 17px;
+    border: 1px solid #f0d8cd;
+    border-radius: 9px;
+    background: #fff3ee;
+    color: #c65d3a;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.remove-instruction-btn:hover {
+    background: #c95e2d;
+    border-color: #c95e2d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Add step button */
+
+.add-instruction-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 21px;
+    margin-top: 5px;
+    border: 1px dashed #e47743;
+    border-radius: 10px;
+    background: #fff0e7;
+    color: #d96835;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.add-instruction-btn:hover {
+    background: #e47743;
+    border-style: solid;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(228, 119, 67, 0.16);
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .instruction-editor {
+        padding: 17px;
+    }
+
+    .instruction-editor h3 {
+        font-size: 20px;
+    }
+
+    .instruction-row {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .instruction-row textarea {
+        min-height: 110px;
+        font-size: 12px;
+    }
+
+    .remove-instruction-btn,
+    .add-instruction-btn {
+        width: 100%;
+    }
+}

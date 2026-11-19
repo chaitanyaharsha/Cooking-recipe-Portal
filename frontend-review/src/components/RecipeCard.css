@@ -1,0 +1,162 @@
+
+/* =========================================
+   RECIPE CARD - PREMIUM ORANGE & CREAM
+========================================= */
+
+.recipe-card {
+    background: #ffffff;
+    border: 1px solid #f2e5d9;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card:hover {
+    transform: translateY(-7px);
+    border-color: #efc3a4;
+    box-shadow: 0 15px 35px rgba(74, 45, 24, 0.11);
+}
+
+/* =========================================
+   RECIPE IMAGE
+========================================= */
+
+.recipe-image-container {
+    position: relative;
+    width: 100%;
+    height: 235px;
+    overflow: hidden;
+    background: #fff0df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 65px;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .recipe-image {
+    transform: scale(1.06);
+}
+
+/* =========================================
+   FAVORITE BUTTON
+========================================= */
+
+.favorite-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #f4e5d9;
+    border-radius: 50%;
+    background: #fffaf4;
+    font-size: 19px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(57, 37, 27, 0.10);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.12);
+    background: #fff0df;
+}
+
+/* =========================================
+   RECIPE CONTENT
+========================================= */
+
+.recipe-card-content {
+    padding: 21px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.recipe-card-content h3 {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #39251b;
+    line-height: 1.4;
+    margin: 0 0 14px;
+}
+
+.recipe-card-content p {
+    color: #927e6e;
+    font-size: 13px;
+    margin: 0 0 10px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   VIEW RECIPE BUTTON
+========================================= */
+
+.view-recipe-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: #e96c2c;
+    color: #ffffff;
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: auto;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.view-recipe-btn:hover {
+    background: #cf5720;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+    .recipe-image-container {
+        height: 215px;
+    }
+
+    .recipe-card-content {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .recipe-image-container {
+        height: 210px;
+    }
+
+    .recipe-card-content {
+        padding: 17px;
+    }
+
+    .recipe-card-content h3 {
+        font-size: 19px;
+    }
+
+    .favorite-btn {
+        width: 39px;
+        height: 39px;
+    }
+}

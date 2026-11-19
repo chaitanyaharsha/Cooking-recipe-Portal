@@ -1,0 +1,938 @@
+
+/* =====================================
+   REVIEW REPORTS PAGE
+===================================== */
+
+.review-reports-page {
+    min-height: 100vh;
+    padding: 25px clamp(18px, 4vw, 65px) 55px;
+    background:
+        radial-gradient(circle at 10% 15%, #fff0df, transparent 35%),
+        #fff8f0;
+    color: #442719;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.review-reports-page * {
+    box-sizing: border-box;
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.reports-hero {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    min-height: 390px;
+    max-width: 1600px;
+    margin: 0 auto 43px;
+    overflow: hidden;
+    border-radius: 34px;
+    background: linear-gradient(
+        110deg,
+        #a93608 0%,
+        #d94b06 55%,
+        #ff650e 100%
+    );
+    box-shadow: 0 22px 45px rgba(170, 72, 20, 0.13);
+}
+
+.reports-hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 62%;
+    padding: 45px 8%;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    padding: 13px 28px;
+    margin-bottom: 27px;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.reports-hero h1 {
+    margin: 0 0 22px;
+    color: #fffaf3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 5.5vw, 76px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -2px;
+}
+
+.reports-hero-content p {
+    max-width: 560px;
+    margin: 0;
+    color: #fff6ed;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-line {
+    display: block;
+    width: 80px;
+    height: 6px;
+    margin-top: 27px;
+    border-radius: 10px;
+    background: #fff5e8;
+}
+
+.reports-hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 42%;
+    height: 100%;
+    overflow: hidden;
+    clip-path: ellipse(85% 115% at 85% 50%);
+}
+
+.reports-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-decoration {
+    position: absolute;
+    pointer-events: none;
+    border: 1px solid rgba(255,255,255,0.17);
+    border-radius: 50%;
+}
+
+.hero-circle-one {
+    width: 400px;
+    height: 400px;
+    top: -230px;
+    right: 27%;
+}
+
+.hero-circle-two {
+    width: 370px;
+    height: 370px;
+    bottom: -285px;
+    right: 36%;
+}
+
+/* =====================================
+   OVERVIEW
+===================================== */
+
+.reports-overview {
+    max-width: 1500px;
+    margin: 0 auto 38px;
+}
+
+.overview-heading {
+    margin-bottom: 20px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #e85a17;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+}
+
+.overview-heading h2,
+.moderation-heading h2 {
+    margin: 0;
+    color: #482819;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.overview-heading p,
+.moderation-heading p {
+    margin: 8px 0 0;
+    color: #967a66;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* =====================================
+   STATISTICS CARDS
+===================================== */
+
+.report-statistics {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.report-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 125px;
+    padding: 22px;
+    border: 1px solid #f4dfcd;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.88);
+    box-shadow: 0 8px 25px rgba(91,48,22,0.045);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.report-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(91,48,22,0.09);
+}
+
+.stat-icon {
+    display: grid;
+    flex: 0 0 76px;
+    width: 76px;
+    height: 76px;
+    place-items: center;
+    border-radius: 50%;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.stat-information {
+    min-width: 0;
+}
+
+.stat-information span {
+    display: block;
+    color: #60422e;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.stat-information h3 {
+    margin: 4px 0;
+    color: #482719;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+}
+
+.stat-information p {
+    margin: 0;
+    color: #9a806d;
+    font-size: 13px;
+}
+
+.total-stat .stat-icon {
+    background: #ffe0c9;
+    color: #e95b13;
+}
+
+.pending-stat .stat-icon {
+    background: #ffebc9;
+    color: #e99b13;
+}
+
+.reviewed-stat .stat-icon {
+    background: #e0f1dc;
+    color: #29964e;
+}
+
+.dismissed-stat .stat-icon {
+    background: #ffdfdc;
+    color: #e34d4d;
+}
+
+/* =====================================
+   MODERATION CENTER
+===================================== */
+
+.reports-moderation {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.moderation-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.moderation-heading h2 {
+    font-size: 35px;
+}
+
+.reports-count {
+    flex-shrink: 0;
+    padding: 16px 26px;
+    border-radius: 35px;
+    background: #ffedd8;
+    color: #e85b0c;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+/* =====================================
+   FILTER AND SEARCH
+===================================== */
+
+.report-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    padding: 0 0 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f0dfcf;
+}
+
+.report-filter-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-tab {
+    min-width: 105px;
+    padding: 14px 24px;
+    border: 1px solid #f2d9c4;
+    border-radius: 35px;
+    background: transparent;
+    color: #66422d;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-tab:hover {
+    border-color: #e95a0c;
+    color: #df5109;
+}
+
+.filter-tab.active {
+    border-color: #e95005;
+    background: linear-gradient(135deg, #f16a12, #dc4800);
+    color: white;
+    box-shadow: 0 7px 15px rgba(221,76,6,0.2);
+}
+
+.report-search {
+    display: flex;
+    align-items: center;
+    flex: 0 1 380px;
+    min-width: 220px;
+    height: 54px;
+    padding: 0 20px;
+    border: 1px solid #f0d9c5;
+    border-radius: 35px;
+    background: #fffdfb;
+}
+
+.report-search span {
+    margin-right: 12px;
+    color: #b18c72;
+    font-size: 27px;
+}
+
+.report-search input {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #493020;
+    font-size: 14px;
+}
+
+.report-search input::placeholder {
+    color: #a58b79;
+}
+
+/* =====================================
+   REPORT LIST
+===================================== */
+
+.reports-list {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+/* =====================================
+   INDIVIDUAL REPORT CARD
+===================================== */
+
+.reported-review-card {
+    display: grid;
+    grid-template-columns: 210px minmax(250px, 1fr) auto;
+    align-items: center;
+    gap: 25px;
+    padding: 23px;
+    border: 1px solid #f2d8c3;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.88);
+    box-shadow: 0 8px 25px rgba(91,48,22,0.045);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reported-review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(91,48,22,0.09);
+}
+
+.report-recipe-image {
+    width: 210px;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 19px;
+    background: #ffead9;
+}
+
+.report-recipe-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.reported-review-card:hover .report-recipe-image img {
+    transform: scale(1.05);
+}
+
+.image-placeholder {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    place-items: center;
+    color: #9b7253;
+    font-size: 13px;
+}
+
+.report-details {
+    min-width: 0;
+}
+
+.report-eyebrow {
+    display: block;
+    margin-bottom: 9px;
+    color: #ed5a13;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.report-details h3 {
+    margin: 0 0 9px;
+    color: #462819;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    overflow-wrap: anywhere;
+}
+
+.review-author {
+    margin: 0 0 13px;
+    color: #967965;
+    font-size: 14px;
+}
+
+.review-author strong {
+    color: #442b1c;
+}
+
+.report-details blockquote {
+    margin: 0 0 14px;
+    color: #573d2b;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 17px;
+    color: #927b68;
+    font-size: 12px;
+}
+
+.report-meta span:first-child {
+    color: #b17839;
+}
+
+.report-status-area {
+    display: flex;
+    align-self: start;
+    justify-content: flex-end;
+}
+
+.report-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.report-status.pending {
+    background: #fff0d9;
+    color: #df720e;
+}
+
+.report-status.reviewed {
+    background: #e3f4e7;
+    color: #25814a;
+}
+
+.report-status.dismissed {
+    background: #f0ece8;
+    color: #746b63;
+}
+
+/* =====================================
+   EXTRA REPORT DETAILS
+===================================== */
+
+.report-extra {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 20px;
+    padding: 19px 0;
+    border-top: 1px solid #f2e4d8;
+    border-bottom: 1px solid #f2e4d8;
+}
+
+.report-extra > div {
+    min-width: 0;
+}
+
+.report-extra > div + div {
+    padding-left: 20px;
+    border-left: 1px solid #f1dfd0;
+}
+
+.report-extra span {
+    display: block;
+    margin-bottom: 9px;
+    color: #a18773;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.report-extra strong {
+    display: block;
+    color: #5c4332;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.report-extra .visible-text {
+    color: #25814a;
+}
+
+.report-extra .hidden-text {
+    color: #dc493a;
+}
+
+/* =====================================
+   REPORT ACTIONS
+===================================== */
+
+.report-actions {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.report-actions button {
+    min-height: 43px;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.report-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.mark-reviewed-btn {
+    background: #e95005;
+    color: #fff;
+}
+
+.mark-reviewed-btn:hover {
+    background: #c94100;
+}
+
+.dismiss-report-btn {
+    border-color: #f1d4bd !important;
+    background: #fff8f1;
+    color: #89502d;
+}
+
+.dismiss-report-btn:hover {
+    background: #ffead9;
+}
+
+.hide-review-btn {
+    border-color: #f1d4bd !important;
+    background: #fff8f1;
+    color: #c45135;
+}
+
+.hide-review-btn:hover {
+    background: #ffe9e2;
+}
+
+.restore-review-btn {
+    border-color: #cce8d2 !important;
+    background: #f0faf2;
+    color: #28804b;
+}
+
+.restore-review-btn:hover {
+    background: #e0f3e5;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.no-reports {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 260px;
+    padding: 35px;
+    border: 1px dashed #e9cbb4;
+    border-radius: 22px;
+    background: #fffdf9;
+    text-align: center;
+}
+
+.empty-icon {
+    display: grid;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+    place-items: center;
+    border-radius: 50%;
+    background: #ffead9;
+    color: #df641d;
+    font-size: 32px;
+}
+
+.no-reports h3 {
+    margin: 0 0 9px;
+    color: #482819;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+}
+
+.no-reports p {
+    margin: 0;
+    color: #967d69;
+    font-size: 14px;
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 1100px) {
+    .reports-hero {
+        min-height: 340px;
+    }
+
+    .reports-hero-content {
+        width: 65%;
+        padding: 35px 6%;
+    }
+
+    .reports-hero-image {
+        width: 43%;
+    }
+
+    .report-statistics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reported-review-card {
+        grid-template-columns: 170px minmax(0, 1fr);
+    }
+
+    .report-recipe-image {
+        width: 170px;
+        height: 155px;
+    }
+
+    .report-status-area {
+        grid-column: 2;
+        grid-row: 1;
+        justify-content: flex-start;
+    }
+
+    .report-details {
+        grid-column: 2;
+        grid-row: 1;
+        padding-top: 42px;
+    }
+}
+
+@media (max-width: 760px) {
+    .review-reports-page {
+        padding: 16px 14px 40px;
+    }
+
+    .reports-hero {
+        min-height: 330px;
+        border-radius: 23px;
+    }
+
+    .reports-hero-content {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .reports-hero h1 {
+        font-size: 43px;
+    }
+
+    .reports-hero-content p {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    .reports-hero-image {
+        display: none;
+    }
+
+    .overview-heading h2,
+    .moderation-heading h2 {
+        font-size: 27px;
+    }
+
+    .report-statistics {
+        gap: 12px;
+    }
+
+    .report-stat-card {
+        min-height: 105px;
+        gap: 11px;
+        padding: 14px;
+        border-radius: 17px;
+    }
+
+    .stat-icon {
+        flex-basis: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .stat-information h3 {
+        font-size: 27px;
+    }
+
+    .stat-information span {
+        font-size: 12px;
+    }
+
+    .stat-information p {
+        font-size: 10px;
+    }
+
+    .moderation-heading {
+        align-items: flex-start;
+    }
+
+    .reports-count {
+        padding: 11px 14px;
+        font-size: 11px;
+    }
+
+    .report-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .report-filter-tabs {
+        gap: 7px;
+    }
+
+    .filter-tab {
+        flex: 1;
+        min-width: 0;
+        padding: 11px 8px;
+        font-size: 12px;
+    }
+
+    .report-search {
+        flex: auto;
+        width: 100%;
+    }
+
+    .reported-review-card {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 13px;
+        padding: 16px;
+    }
+
+    .report-recipe-image {
+        width: 110px;
+        height: 115px;
+    }
+
+    .report-details {
+        padding-top: 0;
+    }
+
+    .report-details h3 {
+        font-size: 19px;
+    }
+
+    .report-eyebrow {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .review-author,
+    .report-details blockquote {
+        font-size: 12px;
+    }
+
+    .report-status-area {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+
+    .report-extra {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .report-extra > div + div {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .report-actions {
+        justify-content: stretch;
+    }
+
+    .report-actions button {
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .report-statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-information p {
+        display: none;
+    }
+
+    .moderation-heading {
+        flex-direction: column;
+    }
+
+    .reported-review-card {
+        grid-template-columns: 1fr;
+    }
+
+    .report-recipe-image {
+        width: 100%;
+        height: 190px;
+    }
+
+    .report-details {
+        grid-column: 1;
+    }
+
+    .report-actions {
+        flex-direction: column;
+    }
+
+    .report-actions button {
+        width: 100%;
+    }
+}
+
+
+/* FIX: Make Review Reports page use full screen width */
+
+.review-reports-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 35px 4% 60px !important;
+    box-sizing: border-box;
+}
+
+.review-hero,
+.review-overview,
+.review-moderation,
+.report-statistics,
+.reports-list {
+    width: 100% !important;
+    max-width: none !important;
+    box-sizing: border-box;
+}
+
+/* Four equal-width statistic cards */
+.report-statistics {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* Prevent parent containers from restricting width */
+main,
+.page-content,
+.admin-content {
+    max-width: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .review-reports-page {
+        padding: 25px 20px 45px !important;
+    }
+
+    .report-statistics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .review-reports-page {
+        padding: 18px 14px 35px !important;
+    }
+
+    .report-statistics {
+        grid-template-columns: 1fr 1fr;
+    }
+}

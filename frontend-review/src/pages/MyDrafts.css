@@ -1,0 +1,1016 @@
+
+/* =====================================
+   MY DRAFTS PAGE
+===================================== */
+
+.my-drafts-page,
+.my-drafts-page * {
+    box-sizing: border-box;
+}
+
+.my-drafts-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 0 45px;
+    overflow-x: clip;
+    background: #fff9f3;
+    color: #542b16;
+    font-family: 'DM Sans', Arial, sans-serif;
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.drafts-hero {
+    min-height: 270px;
+    margin: 18px 2% 0;
+    padding: 45px 5%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255, 239, 218, 0.98) 0%,
+            rgba(255, 235, 210, 0.92) 38%,
+            rgba(255, 225, 193, 0.12) 100%
+        ),
+        url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1800&q=85')
+        center 48% / cover;
+    border: 1px solid #f9dfc5;
+}
+
+.drafts-hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+}
+
+.drafts-eyebrow,
+.section-kicker {
+    display: block;
+    margin-bottom: 10px;
+    color: #ef6c20;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.drafts-hero h1 {
+    margin: 0 0 12px;
+    color: #592b11;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(42px, 5vw, 65px);
+    font-weight: 800;
+    line-height: 1.12;
+}
+
+.drafts-hero-content p {
+    margin: 0;
+    color: #75452b;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* =====================================
+   DRAFT INFORMATION STRIP
+===================================== */
+
+.drafts-info-strip {
+    width: 96%;
+    min-height: 82px;
+    margin: 16px auto 28px;
+    padding: 14px 4%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    border-radius: 24px;
+    background: linear-gradient(100deg, #ffebd3, #ffe2c3);
+    border: 1px solid #ffe0bf;
+    box-shadow: 0 5px 18px rgba(117, 67, 28, 0.045);
+}
+
+.draft-info-item {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.draft-info-icon {
+    color: #e9691a;
+    font-size: 36px;
+    line-height: 1;
+}
+
+.draft-info-item h3 {
+    margin: 0 0 4px;
+    color: #71350f;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.draft-info-item p {
+    margin: 0;
+    color: #896248;
+    font-size: 13px;
+}
+
+.draft-info-divider {
+    height: 45px;
+    width: 1px;
+    background: #e9a36c;
+}
+
+/* =====================================
+   MAIN CONTENT
+===================================== */
+
+.drafts-content {
+    width: 94%;
+    max-width: 1500px;
+    margin: 0 auto;
+    min-width: 0;
+}
+
+/* =====================================
+   SUCCESS AND ERROR MESSAGES
+===================================== */
+
+.draft-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding: 15px 18px;
+    border: 1px solid;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.draft-message.success {
+    color: #247c46;
+    background: #edf8e9;
+    border-color: #cfe8c5;
+}
+
+.draft-message.error {
+    color: #b83d2d;
+    background: #fff0ec;
+    border-color: #f2c9bd;
+}
+
+.draft-message > span {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    place-items: center;
+    border-radius: 50%;
+    background: currentColor;
+    color: white;
+}
+
+.message-close {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* =====================================
+   EDIT FORM
+===================================== */
+
+.draft-edit-form {
+    margin-bottom: 35px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid #f2dfcd;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(104, 57, 24, 0.06);
+}
+
+.edit-form-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f2e5da;
+}
+
+.edit-form-heading .section-kicker {
+    margin-bottom: 5px;
+}
+
+.edit-form-heading h2 {
+    margin: 0;
+    color: #542b16;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+}
+
+.edit-form-heading p {
+    margin: 7px 0 0;
+    color: #927663;
+    font-size: 13px;
+}
+
+.close-edit-btn {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    border: none;
+    border-radius: 50%;
+    background: #fff0e2;
+    color: #e96c20;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.draft-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px 22px;
+}
+
+.draft-field {
+    min-width: 0;
+}
+
+.draft-field-wide {
+    grid-column: 1 / -1;
+}
+
+.draft-field label {
+    display: block;
+    margin-bottom: 8px;
+    color: #65432d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.draft-field input,
+.draft-field textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ead9cb;
+    border-radius: 11px;
+    outline: none;
+    background: #fffdfb;
+    color: #492611;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.draft-field input {
+    min-height: 47px;
+}
+
+.draft-field textarea {
+    min-height: 105px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.draft-field input:focus,
+.draft-field textarea:focus {
+    border-color: #f18a4c;
+    box-shadow: 0 0 0 3px rgba(241, 138, 76, 0.12);
+}
+
+.draft-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #f2e5da;
+}
+
+.draft-form-actions button {
+    min-height: 44px;
+    padding: 0 23px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.draft-form-actions button:hover {
+    transform: translateY(-2px);
+}
+
+.save-draft-btn {
+    border: 1px solid #f47718;
+    background: #f47718;
+    color: white;
+}
+
+.save-draft-btn:hover {
+    background: #df6410;
+}
+
+.cancel-draft-btn {
+    border: 1px solid #e4cbb7;
+    background: #fff8f1;
+    color: #72533c;
+}
+
+/* =====================================
+   COLLECTION HEADING
+===================================== */
+
+.drafts-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 35px 0 22px;
+}
+
+.drafts-section-heading .section-kicker {
+    margin-bottom: 7px;
+}
+
+.drafts-section-heading h2 {
+    margin: 0;
+    color: #54290f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 32px;
+}
+
+.drafts-section-heading p {
+    margin: 8px 0 0;
+    color: #90745f;
+    font-size: 14px;
+}
+
+.draft-count {
+    padding: 10px 17px;
+    border: 1px solid #f5d8bd;
+    border-radius: 30px;
+    background: #fff0e1;
+    color: #d45f1d;
+    font-size: 12px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+/* =====================================
+   DRAFT CARD GRID
+===================================== */
+
+.draft-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* =====================================
+   CREATE RECIPE PANEL
+===================================== */
+
+.create-draft-panel {
+    min-width: 0;
+    min-height: 405px;
+    padding: 25px 17px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1.5px dashed #f2b67f;
+    border-radius: 19px;
+    background: linear-gradient(150deg, #fff7eb, #ffedda);
+}
+
+.create-panel-art {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 50%;
+    background: #ffe1b9;
+}
+
+.create-panel-art span:first-child {
+    color: #a85218;
+    font-size: 76px;
+}
+
+.create-panel-art span:last-child {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    color: #f47718;
+    font-size: 35px;
+}
+
+.create-draft-panel h2 {
+    margin: 0 0 10px;
+    color: #54290f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.create-draft-panel p {
+    max-width: 220px;
+    margin: 0 0 22px;
+    color: #856248;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.create-recipe-btn {
+    min-height: 46px;
+    padding: 0 23px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 30px;
+    background: #f47718;
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.create-recipe-btn:hover {
+    background: #df620d;
+    transform: translateY(-2px);
+}
+
+/* =====================================
+   DRAFT CARDS
+===================================== */
+
+.draft-card {
+    min-width: 0;
+    min-height: 405px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #f0dfd1;
+    border-radius: 19px;
+    background: white;
+    box-shadow: 0 7px 23px rgba(93, 52, 23, 0.065);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.draft-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 13px 30px rgba(93, 52, 23, 0.12);
+}
+
+.draft-card-image-wrap {
+    height: 185px;
+    flex: 0 0 185px;
+    position: relative;
+    overflow: hidden;
+    background: #ffead7;
+}
+
+.draft-card-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.draft-card:hover .draft-card-image {
+    transform: scale(1.05);
+}
+
+.draft-image-fallback {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    color: #d56b28;
+    font-size: 65px;
+    background: linear-gradient(135deg, #fff0dd, #ffdfbd);
+}
+
+.draft-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    background: #fff8f0;
+    color: #71320f;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================
+   CARD CONTENT
+===================================== */
+
+.draft-card-body {
+    flex: 1;
+    min-width: 0;
+    padding: 15px 17px 17px;
+    display: flex;
+    flex-direction: column;
+}
+
+.draft-category {
+    width: fit-content;
+    max-width: 100%;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #fff0dc;
+    color: #df651b;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.draft-card-body h3 {
+    margin: 10px 0 8px;
+    color: #51280f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+}
+
+.draft-description {
+    min-height: 43px;
+    margin: 0;
+    color: #806d60;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   PREMIUM DRAFT BUTTONS
+===================================== */
+
+.draft-card-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 48px;
+    grid-template-rows: 46px 46px;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.draft-card-footer button {
+    min-width: 0;
+    min-height: 46px;
+    border-radius: 10px;
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+/* Continue Editing */
+
+.continue-draft-btn {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: none;
+    background: #f47718;
+    color: #ffffff;
+}
+
+.continue-draft-btn:hover {
+    background: #df620d;
+    box-shadow: 0 5px 14px rgba(244, 119, 24, 0.2);
+    transform: translateY(-2px);
+}
+
+.continue-draft-btn span {
+    font-size: 17px;
+    line-height: 1;
+}
+
+/* Submit Recipe */
+
+.submit-draft-btn {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #238b58;
+    background: #ffffff;
+    color: #238b58;
+}
+
+.submit-draft-btn:hover {
+    background: #238b58;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.submit-draft-btn span {
+    font-size: 15px;
+    line-height: 1;
+}
+
+/* Delete */
+
+.delete-draft-btn {
+    grid-column: 2;
+    grid-row: 2;
+    width: 48px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 1px solid #f0d5ca;
+    background: #fff5f0;
+    color: #d65b42;
+    font-size: 21px;
+}
+
+.delete-draft-btn:hover {
+    background: #d65b42;
+    color: #ffffff;
+    border-color: #d65b42;
+    transform: translateY(-2px);
+}
+
+.draft-card-footer button span {
+    line-height: 1;
+}
+
+/* =====================================
+   EMPTY STATE
+===================================== */
+
+.no-drafts {
+    grid-column: 1 / -1;
+    min-height: 405px;
+    padding: 35px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px dashed #edc5a3;
+    border-radius: 20px;
+    background: #fffdf9;
+}
+
+.empty-drafts-icon {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 15px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff0df;
+    color: #ed7022;
+    font-size: 42px;
+}
+
+.no-drafts h2 {
+    margin: 0 0 10px;
+    color: #54290f;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+}
+
+.no-drafts p {
+    margin: 0 0 20px;
+    color: #89715f;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* =====================================
+   BOTTOM MESSAGE
+===================================== */
+
+.drafts-bottom-message {
+    min-height: 75px;
+    margin-top: 30px;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 22px;
+    background: linear-gradient(100deg, #fff0dd, #ffe3c6);
+    text-align: center;
+}
+
+.drafts-bottom-message span {
+    color: #e86d22;
+    font-size: 27px;
+}
+
+.drafts-bottom-message p {
+    margin: 0;
+    color: #79401f;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 1200px) {
+    .draft-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .create-draft-panel,
+    .draft-card {
+        min-height: 390px;
+    }
+
+    .draft-card-image-wrap {
+        height: 205px;
+        flex-basis: 205px;
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 768px) {
+    .drafts-hero {
+        min-height: 230px;
+        padding: 35px 6%;
+        background-position: 60% center;
+    }
+
+    .drafts-hero h1 {
+        font-size: 43px;
+    }
+
+    .drafts-hero-content p {
+        font-size: 14px;
+    }
+
+    .drafts-info-strip {
+        width: 92%;
+        gap: 20px;
+        padding: 15px 20px;
+    }
+
+    .draft-info-icon {
+        font-size: 29px;
+    }
+
+    .drafts-content {
+        width: 92%;
+    }
+
+    .drafts-section-heading h2 {
+        font-size: 27px;
+    }
+
+    .draft-list {
+        gap: 15px;
+    }
+
+    .draft-card-body {
+        padding: 13px;
+    }
+
+    .draft-card-body h3 {
+        font-size: 19px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 560px) {
+    .drafts-hero {
+        min-height: 210px;
+        margin: 10px 3% 0;
+        padding: 28px 6%;
+        border-radius: 20px;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255, 239, 218, 0.97),
+                rgba(255, 229, 202, 0.82)
+            ),
+            url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1000&q=85')
+            center / cover;
+    }
+
+    .drafts-hero h1 {
+        font-size: 38px;
+    }
+
+    .drafts-hero-content p {
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .drafts-eyebrow {
+        font-size: 10px;
+    }
+
+    .drafts-info-strip {
+        min-height: auto;
+        gap: 12px;
+        padding: 14px;
+    }
+
+    .draft-info-item {
+        gap: 9px;
+    }
+
+    .draft-info-icon {
+        font-size: 25px;
+    }
+
+    .draft-info-item h3 {
+        font-size: 12px;
+    }
+
+    .draft-info-item p {
+        font-size: 10px;
+    }
+
+    .draft-info-divider {
+        height: 35px;
+    }
+
+    .drafts-section-heading {
+        align-items: flex-start;
+        margin-top: 27px;
+    }
+
+    .drafts-section-heading h2 {
+        font-size: 24px;
+    }
+
+    .drafts-section-heading p {
+        font-size: 12px;
+    }
+
+    .draft-count {
+        padding: 8px 10px;
+        font-size: 10px;
+    }
+
+    .draft-list {
+        grid-template-columns: 1fr;
+    }
+
+    .create-draft-panel {
+        min-height: 300px;
+    }
+
+    .draft-card {
+        min-height: 0;
+    }
+
+    .draft-card-image-wrap {
+        height: 220px;
+        flex-basis: 220px;
+    }
+
+    .draft-card-body {
+        padding: 17px;
+    }
+
+    .draft-card-body h3 {
+        font-size: 22px;
+    }
+
+    .draft-description {
+        min-height: auto;
+    }
+
+    .draft-card-footer {
+        margin-top: 17px;
+    }
+
+    .draft-card-footer button {
+        min-height: 45px;
+        font-size: 12px;
+    }
+
+    .delete-draft-btn {
+        width: 48px;
+    }
+
+    .draft-edit-form {
+        padding: 20px 16px;
+    }
+
+    .edit-form-heading h2 {
+        font-size: 21px;
+    }
+
+    .draft-form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .draft-field-wide {
+        grid-column: auto;
+    }
+
+    .draft-form-actions {
+        flex-direction: column;
+    }
+
+    .draft-form-actions button {
+        width: 100%;
+    }
+
+    .no-drafts {
+        grid-column: 1;
+        min-height: 280px;
+    }
+
+    .drafts-bottom-message {
+        gap: 9px;
+        padding: 15px;
+    }
+
+    .drafts-bottom-message p {
+        font-size: 13px;
+    }
+
+    .drafts-bottom-message span {
+        font-size: 20px;
+    }
+}
+
+/* =====================================
+   EXTRA SMALL MOBILE
+===================================== */
+
+@media (max-width: 360px) {
+    .drafts-info-strip {
+        gap: 7px;
+        padding: 12px 9px;
+    }
+
+    .draft-info-icon {
+        font-size: 21px;
+    }
+
+    .draft-info-item h3 {
+        font-size: 11px;
+    }
+
+    .draft-info-item p {
+        font-size: 9px;
+    }
+
+    .draft-card-footer {
+        grid-template-columns: minmax(0, 1fr) 42px;
+        gap: 8px;
+    }
+
+    .draft-card-footer button {
+        font-size: 11px;
+    }
+
+    .delete-draft-btn {
+        width: 42px;
+    }
+}

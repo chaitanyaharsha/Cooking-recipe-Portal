@@ -1,0 +1,354 @@
+
+/* =========================================
+   RECIPE PORTAL - PREMIUM NAVBAR
+   ORANGE & CREAM DESIGN
+========================================= */
+
+.premium-navbar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #fffaf4;
+    border-bottom: 1px solid #f1e5da;
+    box-shadow: 0 3px 15px rgba(57, 37, 27, 0.04);
+}
+
+.premium-navbar-inner {
+    width: 100%;
+    max-width: 1700px;
+    min-height: 88px;
+    margin: 0 auto;
+    padding: 12px 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* BRAND LOGO */
+
+.premium-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.premium-brand-icon {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #ffe5ce;
+    color: #e96c2c;
+    transition: all 0.3s ease;
+}
+
+.premium-brand-icon svg {
+    width: 34px;
+    height: 34px;
+    display: block;
+}
+
+.premium-brand:hover .premium-brand-icon {
+    background: #ffdcc0;
+    transform: translateY(-2px);
+}
+
+.premium-brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.premium-brand-text strong {
+    color: #39251b;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.premium-brand-text > span {
+    margin-top: 7px;
+    color: #e96c2c;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 4px;
+}
+
+/* NAVIGATION CONTAINER */
+
+.premium-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.premium-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    flex-wrap: nowrap;
+    min-width: 0;
+}
+
+/* NAVIGATION LINKS */
+
+.premium-nav-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px 11px;
+    border-radius: 8px;
+    color: #806d5e;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.25s ease;
+}
+
+.premium-nav-link:hover {
+    color: #e96c2c;
+    background: #fff0df;
+}
+
+.premium-nav-link.active {
+    color: #e96c2c;
+    background: #fff0df;
+    font-weight: 750;
+}
+
+/* NOTIFICATIONS */
+
+.premium-notification-link {
+    flex-shrink: 0;
+    background: #fff3e8;
+    color: #c95b25;
+}
+
+.premium-notification-badge {
+    min-width: 19px;
+    height: 19px;
+    padding: 0 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: #e96c2c;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+/* USER DETAILS */
+
+.premium-user-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 14px;
+    border-left: 1px solid #f0e2d5;
+    flex-shrink: 0;
+}
+
+.premium-user-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e96c2c;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.premium-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    max-width: 145px;
+}
+
+.premium-user-info strong {
+    overflow: hidden;
+    color: #39251b;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.premium-user-info span {
+    color: #e96c2c;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* LOGOUT BUTTON */
+
+.premium-logout-btn {
+    padding: 10px 14px;
+    border: 1px solid #f0d3c0;
+    border-radius: 8px;
+    background: #fff0df;
+    color: #c95b25;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.premium-logout-btn:hover {
+    border-color: #e96c2c;
+    background: #e96c2c;
+    color: #ffffff;
+}
+
+.premium-logout-btn span {
+    margin-left: 4px;
+}
+
+/* MOBILE MENU BUTTON */
+
+.premium-menu-toggle {
+    display: none;
+    width: 43px;
+    height: 43px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 10px;
+    background: #fff0df;
+    color: #e96c2c;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+/* TABLET AND SMALL DESKTOP */
+
+@media (max-width: 1250px) and (min-width: 769px) {
+    .premium-navbar-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .premium-navigation {
+        flex-basis: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .premium-nav-links {
+        flex-wrap: wrap;
+    }
+
+    .premium-user-area {
+        padding-left: 0;
+        border-left: none;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .premium-navbar-inner {
+        min-height: 72px;
+        padding: 10px 5%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .premium-brand-icon {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+    }
+
+    .premium-brand-icon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .premium-brand-text strong {
+        font-size: 24px;
+    }
+
+    .premium-brand-text > span {
+        font-size: 10px;
+    }
+
+    .premium-menu-toggle {
+        display: flex;
+    }
+
+    .premium-navigation {
+        display: none;
+        flex-basis: 100%;
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 15px;
+        padding: 12px 0 8px;
+    }
+
+    .premium-navigation.menu-open {
+        display: flex;
+    }
+
+    .premium-nav-links {
+        width: 100%;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .premium-nav-link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+
+    .premium-user-area {
+        width: 100%;
+        padding: 14px 0 0;
+        border-top: 1px solid #f0e2d5;
+        border-left: none;
+        justify-content: flex-start;
+    }
+
+    .premium-user-info {
+        flex: 1;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+    .premium-brand-text strong {
+        font-size: 21px;
+    }
+
+    .premium-brand-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+    }
+}

@@ -1,0 +1,812 @@
+/* =====================================
+   RECIPE PORTAL - PROFILE PAGE
+===================================== */
+
+.profile-page {
+    --orange: #f47721;
+    --orange-dark: #d95008;
+    --brown: #49210f;
+    --cream: #fff7ef;
+    --muted: #826b5d;
+
+    min-height: 100vh;
+    padding: 0 4% 35px;
+    background:
+        radial-gradient(circle at 10% 20%, #fff0df, transparent 35%),
+        #fff8f1;
+    color: var(--brown);
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    overflow: hidden;
+}
+
+.profile-page * {
+    box-sizing: border-box;
+}
+
+/* =====================================
+   HERO BANNER
+===================================== */
+
+.profile-hero {
+    height: 290px;
+    width: calc(100% + 8.4%);
+    margin-left: -4.2%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0 0 48% 8%;
+}
+
+.profile-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 55%;
+    display: block;
+}
+
+.profile-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(49, 24, 8, 0.45),
+        rgba(49, 24, 8, 0.05) 70%
+    );
+}
+
+.profile-hero-content {
+    position: absolute;
+    top: 42px;
+    left: 17%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: clamp(35px, 4vw, 55px);
+    font-style: italic;
+    line-height: 1.1;
+    transform: rotate(-5deg);
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.profile-hero-content span:nth-child(2) {
+    margin-left: 35px;
+}
+
+.hero-underline {
+    width: 180px;
+    height: 18px;
+    margin: 8px 0 0 90px;
+    border-bottom: 3px solid white;
+    border-radius: 50%;
+    transform: rotate(-7deg);
+}
+
+/* =====================================
+   PROFILE MAIN CARD
+===================================== */
+
+.profile-main-card {
+    width: min(850px, 90%);
+    min-height: 145px;
+    margin: -105px auto 30px;
+    padding: 20px 30px 20px 28px;
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    background: rgba(255, 250, 245, 0.97);
+    border: 1px solid #ffe0c6;
+    border-radius: 35px;
+    box-shadow: 0 12px 35px rgba(117, 61, 24, 0.13);
+}
+
+.profile-avatar-wrapper {
+    flex-shrink: 0;
+}
+
+.profile-avatar {
+    width: 125px;
+    height: 125px;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 0 0 3px #ffe4d0;
+}
+
+.profile-avatar-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff8a32, #ed5707);
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 62px;
+    font-weight: bold;
+}
+
+.profile-main-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-main-info h1 {
+    margin: 0 0 5px;
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.profile-contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    color: #624331;
+    font-size: 14px;
+}
+
+.profile-main-info > p {
+    margin: 12px 0 0;
+    color: #6d3921;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.profile-edit-button {
+    flex-shrink: 0;
+    padding: 13px 22px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(110deg, #ff841f, #ec5707);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(228, 93, 17, 0.22);
+    transition: 0.25s ease;
+}
+
+.profile-edit-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(228, 93, 17, 0.3);
+}
+
+/* =====================================
+   MESSAGES
+===================================== */
+
+.profile-message {
+    max-width: 850px;
+    margin: 0 auto 22px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.profile-success {
+    background: #eaf7ec;
+    color: #26723b;
+    border: 1px solid #c9e9d0;
+}
+
+.profile-error {
+    background: #fff0ed;
+    color: #b83225;
+    border: 1px solid #f2c7c1;
+}
+
+/* =====================================
+   STATISTICS
+===================================== */
+
+.profile-stats {
+    max-width: 1300px;
+    margin: 0 auto 35px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.profile-stat-card {
+    min-height: 135px;
+    padding: 18px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffe1ca;
+    border-radius: 21px;
+    box-shadow: 0 6px 20px rgba(120, 66, 28, 0.06);
+    transition: 0.25s ease;
+}
+
+.profile-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(120, 66, 28, 0.12);
+}
+
+.profile-stat-icon {
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+.profile-stat-card h2 {
+    margin: 0;
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 29px;
+}
+
+.profile-stat-card p {
+    margin: 5px 0 0;
+    color: #745342;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.profile-stat-card .profile-stat-location {
+    max-width: 100%;
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+/* =====================================
+   CONTENT GRID
+===================================== */
+
+.profile-content-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.85fr 1.65fr;
+    gap: 20px;
+    align-items: stretch;
+}
+
+/* ABOUT CARD */
+
+.profile-about-card,
+.profile-favorites-card {
+    min-width: 0;
+    padding: 23px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ffe1ca;
+    border-radius: 22px;
+    box-shadow: 0 7px 22px rgba(120, 66, 28, 0.06);
+}
+
+.profile-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-section-heading > span {
+    font-size: 27px;
+}
+
+.profile-section-heading h2 {
+    margin: 0;
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+.profile-about-bio {
+    margin: 20px 0;
+    color: #65402c;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.profile-about-divider {
+    width: 100%;
+    height: 1px;
+    margin: 17px 0;
+    background: #f2dfce;
+}
+
+.profile-about-detail {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin: 16px 0;
+}
+
+.about-detail-icon {
+    width: 30px;
+    flex-shrink: 0;
+    color: var(--orange);
+    font-size: 22px;
+}
+
+.profile-about-detail strong {
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.profile-about-detail p {
+    margin: 4px 0 0;
+    color: #755442;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.profile-interests h3 {
+    margin: 0 0 14px;
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 17px;
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.interest-tags span {
+    padding: 8px 12px;
+    background: #fff0e4;
+    border: 1px solid #ffddc3;
+    border-radius: 25px;
+    color: #704128;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+/* =====================================
+   FAVORITE RECIPE GALLERY
+===================================== */
+
+.profile-favorites-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.profile-view-all {
+    flex-shrink: 0;
+    color: var(--orange-dark);
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.profile-view-all:hover {
+    color: var(--brown);
+    text-decoration: underline;
+}
+
+.profile-recipe-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.profile-recipe-card {
+    min-width: 0;
+    overflow: hidden;
+    display: block;
+    color: var(--brown);
+    background: #fffaf6;
+    border: 1px solid #f4e6db;
+    border-radius: 13px;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.profile-recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 9px 18px rgba(94, 48, 19, 0.13);
+}
+
+.profile-recipe-card img {
+    width: 100%;
+    height: 145px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.profile-recipe-card:hover img {
+    transform: scale(1.05);
+}
+
+.profile-recipe-info {
+    padding: 10px;
+}
+
+.profile-recipe-info h3 {
+    margin: 0 0 7px;
+    color: #482514;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.profile-recipe-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #72523e;
+    font-size: 12px;
+}
+
+.profile-recipe-rating > span:first-child {
+    color: #f5a000;
+}
+
+.recipe-heart {
+    margin-left: auto;
+    color: var(--orange);
+    font-size: 21px;
+}
+
+/* =====================================
+   QUOTE BANNER
+===================================== */
+
+.profile-quote {
+    max-width: 1400px;
+    min-height: 65px;
+    margin: 25px auto 0;
+    padding: 12px 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    background: linear-gradient(100deg, #ffe0c7, #fff0e3, #ffdfc5);
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.profile-quote span {
+    color: var(--orange-dark);
+    font-size: 28px;
+}
+
+.profile-quote p {
+    margin: 0;
+    color: #743517;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* =====================================
+   EDIT PROFILE MODAL
+===================================== */
+
+.profile-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(39, 22, 12, 0.58);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.profile-edit-modal {
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 28px;
+    background: #fffaf5;
+    border: 1px solid #ffe0c6;
+    border-radius: 23px;
+    box-shadow: 0 20px 60px rgba(35, 17, 6, 0.25);
+}
+
+.profile-modal-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.profile-modal-heading h2 {
+    margin: 0 0 5px;
+    color: var(--brown);
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.profile-modal-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.profile-modal-heading > div > span {
+    font-size: 24px;
+}
+
+.profile-modal-close {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 50%;
+    background: #ffeadb;
+    color: var(--brown);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.profile-modal-close:hover {
+    background: #ffdbc0;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-form label {
+    margin-top: 7px;
+    color: var(--brown);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.profile-form input,
+.profile-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ead9ca;
+    border-radius: 11px;
+    background: white;
+    color: var(--brown);
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+.profile-form textarea {
+    resize: vertical;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 3px rgba(244, 119, 33, 0.12);
+}
+
+.profile-field-error {
+    color: #c0392b;
+    font-size: 12px;
+}
+
+.profile-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.profile-form-actions button {
+    flex: 1;
+    min-height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.profile-save-button {
+    background: linear-gradient(110deg, #ff841f, #ec5707);
+    color: white;
+}
+
+.profile-save-button:hover {
+    background: #d94e06;
+}
+
+.profile-cancel-button {
+    background: #f2e9e1;
+    color: #634a39;
+}
+
+.profile-cancel-button:hover {
+    background: #e8d9cc;
+}
+
+/* =====================================
+   TABLET RESPONSIVE
+===================================== */
+
+@media (max-width: 1050px) {
+    .profile-page {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+
+    .profile-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-recipe-card img {
+        height: 180px;
+    }
+
+    .profile-hero-content {
+        left: 10%;
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media (max-width: 700px) {
+    .profile-page {
+        padding: 0 15px 25px;
+    }
+
+    .profile-hero {
+        width: calc(100% + 30px);
+        height: 220px;
+        margin-left: -15px;
+        border-radius: 0 0 35% 5%;
+    }
+
+    .profile-hero-content {
+        top: 35px;
+        left: 8%;
+        font-size: 36px;
+    }
+
+    .profile-main-card {
+        width: 95%;
+        margin-top: -65px;
+        padding: 22px 17px;
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        border-radius: 25px;
+    }
+
+    .profile-avatar {
+        width: 105px;
+        height: 105px;
+    }
+
+    .profile-avatar-placeholder {
+        font-size: 50px;
+    }
+
+    .profile-main-info h1 {
+        font-size: 29px;
+    }
+
+    .profile-contact-info {
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .profile-main-info > p {
+        font-size: 14px;
+    }
+
+    .profile-edit-button {
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .profile-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .profile-stat-card {
+        min-height: 120px;
+        padding: 13px 8px;
+    }
+
+    .profile-stat-card h2 {
+        font-size: 24px;
+    }
+
+    .profile-stat-card p {
+        font-size: 12px;
+    }
+
+    .profile-about-card,
+    .profile-favorites-card {
+        padding: 18px;
+    }
+
+    .profile-section-heading h2 {
+        font-size: 19px;
+    }
+
+    .profile-recipe-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .profile-recipe-card img {
+        height: 135px;
+    }
+
+    .profile-quote {
+        gap: 12px;
+        padding: 13px;
+    }
+
+    .profile-quote p {
+        font-size: 15px;
+    }
+
+    .profile-quote span {
+        font-size: 21px;
+    }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 380px) {
+    .profile-hero-content {
+        font-size: 30px;
+    }
+
+    .profile-contact-info {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .profile-favorites-heading {
+        align-items: flex-start;
+    }
+
+    .profile-section-heading h2 {
+        font-size: 17px;
+    }
+
+    .profile-view-all {
+        font-size: 12px;
+    }
+
+    .profile-recipe-card img {
+        height: 115px;
+    }
+
+    .profile-recipe-info h3 {
+        font-size: 12px;
+    }
+
+    .profile-form-actions {
+        flex-direction: column;
+    }
+}

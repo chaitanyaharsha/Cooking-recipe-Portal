@@ -1,0 +1,167 @@
+
+/* Ingredient Editor */
+
+.ingredient-editor {
+    width: 100%;
+    margin: 25px 0;
+    padding: 25px;
+    background: #fffaf4;
+    border: 1px solid #eee4da;
+    border-radius: 18px;
+}
+
+/* Heading */
+
+.ingredient-editor h3 {
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 700;
+    color: #302a24;
+    margin: 0 0 22px;
+}
+
+/* Ingredient row */
+
+.ingredient-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: #ffffff;
+    border: 1px solid #eee5dc;
+    border-radius: 13px;
+    transition: all 0.25s ease;
+}
+
+.ingredient-row:hover {
+    border-color: #efc2a9;
+    box-shadow: 0 5px 15px rgba(60, 42, 27, 0.05);
+}
+
+/* Inputs and select */
+
+.ingredient-row input,
+.ingredient-row select {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0 12px;
+    border: 1px solid #e8ddd2;
+    border-radius: 9px;
+    background: #fffaf6;
+    color: #302a24;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.ingredient-row input::placeholder {
+    color: #a49a90;
+}
+
+.ingredient-row input:focus,
+.ingredient-row select:focus {
+    border-color: #e47743;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(228, 119, 67, 0.12);
+}
+
+/* Delete button */
+
+.remove-ingredient-btn {
+    height: 42px;
+    padding: 0 15px;
+    border: 1px solid #f0d8cd;
+    border-radius: 9px;
+    background: #fff3ee;
+    color: #c65d3a;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.remove-ingredient-btn:hover {
+    background: #c95e2d;
+    border-color: #c95e2d;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Add ingredient button */
+
+.add-ingredient-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 8px;
+    padding: 13px 21px;
+    border: 1px dashed #e47743;
+    border-radius: 10px;
+    background: #fff0e7;
+    color: #d96835;
+    font-size: 13px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.add-ingredient-btn:hover {
+    background: #e47743;
+    border-style: solid;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(228, 119, 67, 0.16);
+}
+
+/* Tablet */
+
+@media (max-width: 750px) {
+    .ingredient-row {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ingredient-row input:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .remove-ingredient-btn {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+    .ingredient-editor {
+        padding: 17px;
+    }
+
+    .ingredient-editor h3 {
+        font-size: 20px;
+    }
+
+    .ingredient-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .ingredient-row input:first-child {
+        grid-column: auto;
+    }
+
+    .ingredient-row input,
+    .ingredient-row select {
+        height: 45px;
+    }
+
+    .remove-ingredient-btn,
+    .add-ingredient-btn {
+        width: 100%;
+    }
+}

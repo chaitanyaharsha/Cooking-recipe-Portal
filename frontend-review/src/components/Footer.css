@@ -1,0 +1,196 @@
+
+/* =====================================
+   PREMIUM RECIPE PORTAL FOOTER
+   ORANGE + CREAM THEME
+===================================== */
+
+.premium-footer {
+    background: #39251b;
+    color: #fff9f1;
+    padding: 60px 6% 0;
+    margin-top: 70px;
+}
+
+.footer-main {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 0.8fr 1.2fr;
+    gap: 45px;
+    padding-bottom: 45px;
+}
+
+/* BRAND */
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #fff9f1;
+}
+
+.footer-logo-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: #fff0df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+}
+
+.footer-logo strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 23px;
+}
+
+.footer-logo small {
+    display: block;
+    color: #f3a16f;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.footer-brand > p {
+    color: #e3cfc0;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 300px;
+    margin: 20px 0;
+}
+
+.footer-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #f3b184;
+    font-size: 13px;
+}
+
+/* FOOTER LINKS */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-links h3,
+.footer-message h3 {
+    color: #fff9f1;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    margin: 5px 0 12px;
+}
+
+.footer-links a {
+    color: #e3cfc0;
+    font-size: 14px;
+    text-decoration: none;
+    width: fit-content;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #ffb47f;
+    transform: translateX(4px);
+}
+
+/* FOOTER MESSAGE */
+
+.footer-message {
+    padding: 25px;
+    background: #503326;
+    border: 1px solid #75503a;
+    border-radius: 14px;
+}
+
+.footer-message-icon {
+    font-size: 30px;
+}
+
+.footer-message h3 {
+    margin: 12px 0;
+    line-height: 1.5;
+}
+
+.footer-message p {
+    color: #e3cfc0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.footer-explore-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: #e96c2c;
+    color: #fff9f1;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.footer-explore-btn:hover {
+    background: #f58a4e;
+    transform: translateY(-2px);
+}
+
+/* COPYRIGHT SECTION */
+
+.footer-bottom {
+    max-width: 1400px;
+    margin: auto;
+    padding: 22px 0;
+    border-top: 1px solid #674b3b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer-bottom p {
+    color: #d5bca9;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .premium-footer {
+        padding: 40px 6% 0;
+        margin-top: 45px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-message {
+        padding: 22px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+    }
+}
