@@ -20,6 +20,26 @@ A responsive web-based Cooking Recipe Portal built using React and Vite.
 - Moderator Dashboard
 - Reports and Review Management
 
+## Important Notes
+
+### 1. Admin Credentials
+- **Email:** `testuser@example.con`
+- **Password:** Shared separately
+- **Role:** Admin
+
+### 2. Moderator Credentials
+- **Email:** `moderator@example.com`
+- **Password:** Shared separately
+- **Role:** Moderator
+- **Responsibility:** The moderator reviews submitted recipes and approves or rejects them before they are published.
+
+### 3. Recipe Information
+- The application contains both **static recipes** and **backend-integrated recipes**.
+- Static recipes are hardcoded into the frontend.
+- Backend recipes are added dynamically through the backend.
+- Some backend recipes currently do not have images.
+- Images can be uploaded and added to backend recipes through the available backend functionality.
+
 ## Technologies Used
 
 - React.js
@@ -50,7 +70,7 @@ npm run dev
 
 ## Project Status
 
-Frontend development completed. Backend integration will be handled separately.
+The frontend and backend have been integrated. The application supports recipe management, user authentication, moderation, favorites, reviews, ratings, and administrative features. Some frontend features may still require further API integration and testing.
 
 ## FrontEnd Developer
 
